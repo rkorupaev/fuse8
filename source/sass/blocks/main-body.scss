@@ -14,3 +14,37 @@
   flex-wrap: wrap;
   margin-bottom: 22px;
 }
+
+.main-body__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+  min-height: 50px;
+  margin: 0 auto;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+
+  background-color: transparent;
+  border: 1px solid $border-grey;
+  border-radius: 50px;
+
+  transition-duration: 0.3s;
+
+  &:hover,
+  &:focus {
+    border-color: $border-hover;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  & svg {
+    margin-left: 5px;
+    padding-top: 2px;
+  }
+}
