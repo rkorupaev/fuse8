@@ -6,11 +6,17 @@
 
   width: 379px;
   min-height: 381px;
+  margin-right: 21px;
+  margin-bottom: 38px;
 
   box-sizing: border-box;
   outline: none;
   border: 1px solid $border-grey;
   transition-duration: 0.3s;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 
   &:hover,
   &:focus {
