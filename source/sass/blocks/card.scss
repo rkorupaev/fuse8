@@ -1,0 +1,91 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 379px;
+  min-height: 381px;
+
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid $border-grey;
+  transition-duration: 0.3s;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $border-hover;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.card__image-block {
+  position: relative;
+  height: 230px;
+  margin-bottom: 17px;
+}
+
+.card__image {
+  height: 100%;
+}
+
+.card__type {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 134px;
+  height: 22px;
+  padding-top: 8px;
+  background-color: $background-color-dark-green;
+  color: $white;
+
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.card__text-block {
+  padding: 0 20px;
+}
+
+.card__title {
+  margin: 0;
+  margin-bottom: 2px;
+
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.card__address {
+  margin-bottom: 15px;
+
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.card__price-text {
+  margin-bottom: 7px;
+
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.card__price {
+  font-weight: bold;
+}
+
+.card__shared-type {
+  margin-bottom: 17px;
+
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+}
