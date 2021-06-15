@@ -1,0 +1,16 @@
+.aparts-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.aparts-list__item {
+  width: 379px;
+  min-height: 381px;
+  margin-right: 21px;
+  margin-bottom: 38px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
