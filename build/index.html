@@ -25,6 +25,7 @@
       <input class="filter-block__input" type="text" placeholder="Input Apartment Name">
     </section>
     <section class="main-body__aparts">
+      <h2 class="visually-hidden aparts-title">Appartments list</h2>
       <ul class="main-body__aparts-list aparts-list"></ul>
     </section>
     <button class="main-body__button" type="button">See more
@@ -47,6 +48,11 @@
       <p class="card__shared-type">Shared Ownership Available</p>
     </div>
   </a>
+</template>
+<template id="notification">
+    <h2 class="notification__title">Sorry, no appartments found..</h2>
+    <img class="notification__image" src="./img/sad_placeholder.png" width="100" height="100">
+    <p class="notification__text">Try another appartment name, please.</p>
 </template>
 <script src="js/vendor.min.js"></script>
 <script src="js/main.min.js"></script>

@@ -1,0 +1,21 @@
+.notification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 400px;
+  min-height: 200px;
+  margin: 0 auto;
+}
+
+.notification__image {
+  width: 100px;
+  height: 100px;
+}
+
+
+@media (max-width: $tablet-only) {
+  .notification {
+    width: 320px;
+  }
+}

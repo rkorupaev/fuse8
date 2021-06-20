@@ -22,7 +22,10 @@
 .card__image-block {
   position: relative;
   height: 230px;
+  width: 100%;
   margin-bottom: 17px;
+
+  background-color: brown;
 }
 
 .card__image {
