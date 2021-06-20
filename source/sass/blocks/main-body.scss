@@ -46,3 +46,10 @@
     padding-top: 2px;
   }
 }
+
+
+@media (max-width: $tablet-only) {
+  .main-body {
+    padding: 0
+  }
+}

@@ -11,3 +11,10 @@
   margin: 0;
   margin-left: 399px;
 }
+
+
+@media (max-width: $tablet-only) {
+  .main-header__title {
+    margin: 0
+  }
+}

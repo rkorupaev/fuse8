@@ -45,10 +45,6 @@ a {
   margin: 0 auto;
 }
 
-.verticals-paddings {
-  padding: 120px 0;
-}
-
 .container {
   box-sizing: border-box;
   width: 100%;
@@ -66,12 +62,8 @@ a {
 
 
 @media (max-width: $tablet-only) {
-  .verticals-paddings {
-    padding: 70px 0;
-  }
-
   .container {
-    max-width: 375px;
+    max-width: 320px;
   }
 }
 
