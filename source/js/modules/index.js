@@ -36,7 +36,7 @@ fetchData((data) => {
       const cardBlock = document.querySelector(".main-body__aparts-list");
       mapCards(filteredData, cardBlock);
       const filterInput = document.querySelector(FILTER_INPUT_CLASS);
-      filterInput.addEventListener("change", (evt) => {
+      filterInput.addEventListener("input", (evt) => {
           if (evt.currentTarget.value.length > 3) {
             filteredData = filterData(data, evt);
             mapCards(filteredData, cardBlock);
