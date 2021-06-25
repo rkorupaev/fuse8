@@ -68,8 +68,8 @@ const mapCards = (data, block) => {
         card.classList.add("aparts-list__item");
         card.append(document.getElementById("card").content.cloneNode(true));
 
-        let imageIndex = getRandomInt(1, 3);
-        card.querySelector(".card__image").setAttribute("src", "./img/apart" + imageIndex + ".png");
+        let imageIndex = getRandomInt(1, 4);
+        card.querySelector(".card__image").setAttribute("src", "./img/apart" + 4 + ".png");
 
         switch (data[i].type) {
           case "IndependentLiving" :

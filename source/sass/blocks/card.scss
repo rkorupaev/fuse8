@@ -30,6 +30,7 @@
 
 .card__image {
   height: 100%;
+  object-fit: cover;
 }
 
 .card__type {
@@ -37,9 +38,9 @@
   right: 0;
   bottom: 0;
 
-  width: 134px;
-  height: 22px;
-  padding-top: 8px;
+  min-width: 118px;
+  min-height: 14px;
+  padding: 8px;
   background-color: $background-color-dark-green;
   color: $white;
 
@@ -50,7 +51,7 @@
 
   &--orange-background {
     background-color: $background-color-orange;
-    width: 204px;
+    width: 188px;
   }
 }
 
