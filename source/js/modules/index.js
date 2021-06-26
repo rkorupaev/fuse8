@@ -1,8 +1,10 @@
 import {mapCards} from "./map_cards";
+import {debounce} from "./utils";
 
 const DOWNLOAD_URL = "https://603e38c548171b0017b2ecf7.mockapi.io/homes";
 const STATUS_CODE_OK = "200";
 const FILTER_INPUT_CLASS = ".filter-block__input";
+const DELAY = 250;
 
 const fetchData = (onLoad, onError) => {
   const xhr = new XMLHttpRequest();
@@ -37,15 +39,17 @@ fetchData((data) => {
       const cardBlock = document.querySelector(".main-body__aparts-list");
       mapCards(filteredData, cardBlock);
       const filterInput = document.querySelector(FILTER_INPUT_CLASS);
-      filterInput.addEventListener("input", (evt) => {
-          if (evt.currentTarget.value.length > 3) {
-            filteredData = filterData(data, evt);
-            mapCards(filteredData, cardBlock);
-          } else if (evt.currentTarget.value.length === 0) {
-            mapCards(data, cardBlock);
-          }
+
+      let onChange = (evt) => {
+        if (evt.target.value.length > 3) {
+          filteredData = filterData(data, evt);
+          mapCards(filteredData, cardBlock);
+        } else if (evt.target.value.length === 0) {
+          mapCards(data, cardBlock);
         }
-      );
+      }
+      onChange = debounce(onChange, DELAY);
+      filterInput.addEventListener("input", onChange);
     }
   },
   (status) => {
@@ -54,6 +58,6 @@ fetchData((data) => {
 );
 
 const filterData = (data, evt) => {
-  let filteredData = data.filter(appart => appart.title.toLowerCase().includes(evt.currentTarget.value.toLowerCase()));
+  let filteredData = data.filter(appart => appart.title.toLowerCase().includes(evt.target.value.toLowerCase()));
   return filteredData;
 };

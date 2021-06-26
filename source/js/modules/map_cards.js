@@ -1,3 +1,5 @@
+import {getRandomInt} from "./utils";
+
 const INDEPENDENT_LIVING = "Independent living";
 const SUPPORT_AVALIABLE = "Restaurant & Support available";
 
@@ -39,15 +41,3 @@ export const mapCards = (data, block) => {
     }
   }
 };
-
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-const debounce = (callback, delay) => {
-  let timeout;
-  return function () {
-    clearTimeout(timeout);
-    timeout = setTimeout(callback, delay);
-  }
-}
