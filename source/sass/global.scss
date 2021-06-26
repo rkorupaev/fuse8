@@ -60,8 +60,14 @@ a {
   margin: -1px;
 }
 
-
 @media (max-width: $tablet-only) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+
+@media (max-width: $mobile-only) {
   .container {
     max-width: 320px;
   }

@@ -30,6 +30,7 @@ const fetchData = (onLoad, onError) => {
   xhr.send();
 }
 
+
 fetchData((data) => {
     if (data) {
       let filteredData = data;
@@ -68,8 +69,8 @@ const mapCards = (data, block) => {
         card.classList.add("aparts-list__item");
         card.append(document.getElementById("card").content.cloneNode(true));
 
-        let imageIndex = getRandomInt(1, 4);
-        card.querySelector(".card__image").setAttribute("src", "./img/apart" + 4 + ".png");
+        let imageIndex = getRandomInt(1, 5);
+        card.querySelector(".card__image").setAttribute("src", "./img/apart" + imageIndex + ".png");
 
         switch (data[i].type) {
           case "IndependentLiving" :
@@ -97,4 +98,12 @@ const filterData = (data, evt) => {
 
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+const debounce = (callback, delay) => {
+  let timeout;
+  return function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(callback, delay);
+  }
 }

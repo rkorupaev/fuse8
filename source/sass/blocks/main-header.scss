@@ -12,8 +12,14 @@
   margin-left: 399px;
 }
 
-
 @media (max-width: $tablet-only) {
+  .main-header__title {
+    margin-left: 120px;
+  }
+}
+
+
+@media (max-width: $mobile-only) {
   .main-header__title {
     margin: 0
   }
