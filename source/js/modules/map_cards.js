@@ -2,10 +2,19 @@ import {getRandomInt} from "./utils";
 
 const INDEPENDENT_LIVING = "Independent living";
 const SUPPORT_AVALIABLE = "Restaurant & Support available";
+const MAIN_BODY_BUTTON = ".main-body__button";
+const APARTS_LIST_ITEM = "aparts-list__item";
+const CARD_IMAGE = ".card__image";
+const CARD_TYPE = ".card__type";
+const CARD_TITLE = ".card__title";
+const CARD_ADDRESS = ".card__address";
+const CARD_PRICE = ".card__price";
+const CARD_ORANGE_BACKGROUND = "card__type--orange-background";
+
 
 export const mapCards = (data, block) => {
   block.textContent = "";
-  const seeMoreButton = document.querySelector(".main-body__button");
+  const seeMoreButton = document.querySelector(MAIN_BODY_BUTTON);
 
   if (data.length == 0) {
     seeMoreButton.style.display = "none";
@@ -18,24 +27,24 @@ export const mapCards = (data, block) => {
     for (let i = 0; i < 6; i++) {
       if (data[i]) {
         const card = document.createElement("li");
-        card.classList.add("aparts-list__item");
+        card.classList.add(APARTS_LIST_ITEM);
         card.append(document.getElementById("card").content.cloneNode(true));
 
         let imageIndex = getRandomInt(1, 5);
-        card.querySelector(".card__image").setAttribute("src", "./img/apart" + imageIndex + ".png");
+        card.querySelector(CARD_IMAGE).setAttribute("src", "./img/apart" + imageIndex + ".png");
 
         switch (data[i].type) {
           case "IndependentLiving" :
-            card.querySelector(".card__type").textContent = INDEPENDENT_LIVING;
+            card.querySelector(CARD_TYPE).textContent = INDEPENDENT_LIVING;
             break;
           case "SupportAvailable" :
-            card.querySelector(".card__type").classList.add("card__type--orange-background");
-            card.querySelector(".card__type").textContent = SUPPORT_AVALIABLE;
+            card.querySelector(CARD_TYPE).classList.add(CARD_ORANGE_BACKGROUND);
+            card.querySelector(CARD_TYPE).textContent = SUPPORT_AVALIABLE;
             break;
         }
-        card.querySelector(".card__title").textContent = data[i].title;
-        card.querySelector(".card__address").textContent = data[i].address;
-        card.querySelector(".card__price").textContent = "£" + data[i].price;
+        card.querySelector(CARD_TITLE).textContent = data[i].title;
+        card.querySelector(CARD_ADDRESS).textContent = data[i].address;
+        card.querySelector(CARD_PRICE).textContent = "£" + data[i].price;
         block.append(card);
       }
     }

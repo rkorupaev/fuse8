@@ -20,3 +20,12 @@
     border-color: $border-hover;
   }
 }
+
+.filter-block__error-message {
+  display: none;
+  margin-left: 20px;
+  padding: 17px;
+  background-color: #FFCCCC;
+  border-radius: 5px;
+  font-weight: 700;
+}
